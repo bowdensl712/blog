@@ -1,0 +1,19 @@
+
+<% unless comment.archived? %>
+    <p>
+        <strong>Commenter:</strong>
+        <%= comment.commenter %>
+    </p>
+
+    <p>
+        <strong>Comment:</strong>
+        <%= comment.body %>
+    </p>
+    <img src="<%= comment.image_link %>" alt="No image found.">
+    <p>
+        <%= link_to "Delete Comment", [comment.article, comment], data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"}%>
+    </p>
+
+<% end %>
