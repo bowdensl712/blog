@@ -10,15 +10,15 @@
 
 <div>
     <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, size: "60x10" %>
     <% article.errors.full_messages_for(:body).each do |message| %>
         <div><%= message %></div>
     <% end %>
 </div>
 
 <div>
-    <%= form.label :image_link %>
-    <%= form.text_field :image_link %>
+    <%= form.label :image_link %><br>
+    <%= form.text_field :image_link, id: "article_image"%>
         <% article.errors.full_messages_for(:image_link).each do |message| %>
 
         <div><%= message %></div>

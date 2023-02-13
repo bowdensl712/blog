@@ -1,14 +1,14 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
 <p>
-    <%= form.label :commenter %><br>
+    <%= form.label "Name" %><br>
     <%= form.text_field :commenter %>
 </p>
 <p>
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.label "Comment" %><br>
+    <%= form.text_area :body, size: "40x7" %>
 </p>
 <p>
-    <%= form.label :image_link %>
+    <%= form.label :image_link %><br>
     <%= form.text_field :image_link %>
 </p>
 <p>
