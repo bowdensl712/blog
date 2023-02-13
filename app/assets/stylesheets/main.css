@@ -71,10 +71,55 @@ select {
     background-color: #CCBFB1;
 }
 
+/* Article */
+
+.article_picture {
+    max-width: 500px;
+}
+
 /* Index */
 .new_article {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 30px;
+}
+
+.grid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    grid-auto-rows: 270px;
+    gap: 10px;
+    justify-items: center;
+}
+
+.article_thumbnail {
+    all: revert;
+    position: relative;
+    width: 250px;
+    height: auto;
+}
+
+.article_thumbnail:hover {
+    background-color: revert;
+    color: revert;
+    border-color: revert; 
+}
+
+.thumbnail_image {
+    width: 247px;
+}
+
+.thumbnail_text {
+    float: bottom;
+    background-color: black;
+    color: #DFD5A5;
+    opacity: 0.7;
+    width: 100%;
+    height: 23px;
+    margin-top: -33px;
+    padding-top: 5px;
+    overflow: none;
 }
 
 
