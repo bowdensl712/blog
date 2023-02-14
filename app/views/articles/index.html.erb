@@ -1,13 +1,26 @@
+<% content_for :title do %>
+  Welcome to Postblog
+<% end %>
+
 <h1>Postblog Articles</h1>
 
 <p>Our blog has <%= Article.public_count %> articles and counting! </p>
 
+<!-- 記事一覧 -->
 <div class="grid">
   <% @articles.each do |article|  %>
     <% unless article.archived? %>
       <%= link_to article, class:"article_thumbnail" do %>
         <%= image_tag article.image_link, class:"thumbnail_image", alt:"image not found"%>
-        <div class="thumbnail_text"><%= article.title%></div>
+        <div class="thumbnail_text">
+          <!-- ↓↓記事の言語を表示する↓↓ -->
+          <% if article.language=="English" %>
+            🇬🇧
+          <% elsif article.language=="Japanese" %>
+            🇯🇵
+          <% end %>
+          <%= article.title%>
+        </div>
       <% end %>
     <% end %>
   <% end %>

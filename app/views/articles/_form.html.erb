@@ -26,6 +26,11 @@
 </div>
 
 <div>
+    <%= form.label :language %><br>
+    <%= form.select :language, ['English', 'Japanese'] %>
+</div>
+
+<div>
     <%= form.label :status %><br>
     <%= form.select :status, ['public', 'private', 'archived']%>
 </div>
