@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
 
     def set_search
         @q = Article.ransack(params[:q])
-        @articles = @q.result(distinct: true)
+        @article_results = @q.result(distinct: true)
     end
 end
