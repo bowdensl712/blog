@@ -1,8 +1,49 @@
-<%= search_form_for(@q, url: articles_results_path, method: :get) do |f| %>
+<script type="text/javascript">
+    window.onload = checkSearchCookie();
+    //前ページのクッキーを確認する
+    function checkSearchCookie() {
+        let asb = document.getElementById("advanced_search_box");
+        let sb = document.getElementById("search_box");
+        if (document.cookie === "search=advanced") {
+            asb.style.display = "block";
+            sb.style.display = "none";
+            console.log("Advanced Search toggled!")
+        }
+    }
+    
+    //検索ボックスを切り替えて、クッキを生成・削除する
+    function toggleAdvancedSearch() {
+        let asb = document.getElementById("advanced_search_box");
+        let sb = document.getElementById("search_box");
+        if (window.getComputedStyle(asb).display === "none") {
+            document.cookie = "search=advanced; path=/";
+            asb.style.display = "block";
+            sb.style.display = "none";
+            
+        } else if (window.getComputedStyle(asb).display === "block") {
+            document.cookie = "search=simple; path=/";
+            asb.style.display = "none";
+            sb.style.display = "block";
+            
+        }
+    }
+</script>
 
-<%= f.label "Search Articles" %>
-<%= f.search_field :title_or_body_cont %>
+<div id="search_box">
+    <%= search_form_for(@q, url: articles_results_path, method: :get) do |f| %>
+        <%= f.search_field :title_or_body_cont, placeholder:"Search...", class:"search_field" %>
 
-<%= f.submit %>
+        <%= f.submit class:"submit" %>
+    <% end %>
+    <a id="advanced_search" onclick="toggleAdvancedSearch()">Advanced Search</a>
+</div>
 
-<% end %>
+<div id="advanced_search_box">
+    <%= search_form_for(@q, url: articles_results_path, method: :get) do |f| %>
+        <%= f.search_field :title_cont, placeholder:"Search in Title" %>
+        <%= f.search_field :body_cont, placeholder:"Search in Contents" %>
+        <%= f.select :language_eq, ["English", "Japanese"], include_blank: 'Any Language' %>
+        <%= f.submit class:"submit" %>
+    <% end %>
+    <a id="advanced_search" onclick="toggleAdvancedSearch()">Normal Search</a>
+</div>

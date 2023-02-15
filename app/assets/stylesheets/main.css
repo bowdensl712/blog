@@ -121,6 +121,44 @@ select {
     overflow: none;
 }
 
+.submit:hover {
+    cursor: pointer;
+    background-color: #B6AA9C;
+    color: #423C35;
+    border-color: #423C35; 
+}
+
+/* 検索ボックス */
+#search_box {
+    border: 1px solid #5B5349;
+    width: 500px;
+    margin: auto;
+}
+
+.search_field {
+    width: 200px;
+}
+
+#advanced_search {
+    display: block;
+    width: 160px;
+    font-size: 11px;
+    border-radius: 0;
+    padding: 2px 6px;
+    margin: 3px auto;
+}
+#advanced_search:hover {
+    cursor: pointer;
+}
+
+#advanced_search_box {
+    border: 1px solid #5B5349;
+    display: none;
+    width: 500px;
+    height: auto;
+    margin: auto;
+    
+}
 
 /* フッター */
 
