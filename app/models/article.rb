@@ -15,8 +15,22 @@ class Article < ApplicationRecord
         %w(articles comments)
     end
 
-    ransacker :created_at do
-        Arel.sql('date(created_at)')
-      end
+    scope :created_after, -> (time) {
+         # time = year.to_s + "-" + month.to_s + "-" + day.to_s
+         time = time.to_time
+         puts time
+        where('created_at > ?', time)
+      }
+      scope :created_before, -> (time) {
+        # time = year.to_s + "-" + month.to_s + "-" + day.to_s
+        time = time.to_time
+        time = time + 23.hours + 59.minutes
+        puts time
+        where('created_at < ?', time)
+      }
+
+    def self.ransackable_scopes(auth_object = nil)
+        %w(created_after created_before)
+    end
 
 end 
