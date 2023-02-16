@@ -1,5 +1,5 @@
 module ApplicationHelper
-    def set_language(value)
-        cookies[:lanuage] = value
-    end
+  def language_cookie(value)
+    cookies[:language] = value
+  end
 end
