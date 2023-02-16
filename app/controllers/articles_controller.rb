@@ -7,8 +7,6 @@ class ArticlesController < ApplicationController
      @articles = Article.all
   end
 
-  
-
   def show
     @article = Article.find(params[:id])
   end
@@ -49,14 +47,15 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def article_params
-      params.require(:article).permit(:title, :body, :image_link, :language, :status)
-    end
 
-    def search
-      if params[:q]
-        search_params = CGI::escapeHTML(params[:q])
-        redirect_to ("http://localhost:3000/articles?q%5Btitle_or_body_cont%5D=#{search_params}&commit=Search&commit=Search")
-      end
+  def article_params
+    params.require(:article).permit(:title, :body, :image_link, :language, :status)
+  end
+
+  def search
+    return unless params[:q]
+      search_params = CGI::escapeHTML(params[:q])
+      redirect_to ("http://localhost:3000/articles?q%5Btitle_or_body_cont%5D=#{search_params}&commit=Search&commit=Search")
     end
+  end
 end
