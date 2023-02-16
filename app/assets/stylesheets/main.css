@@ -128,6 +128,21 @@ select {
     border-color: #423C35; 
 }
 
+/* 並び替えボックス */
+#sort_box {
+    border: 1px solid #5B5349;
+    width: 200px;
+    height: 30px;
+    margin: 10px auto -40px 350px;
+    padding: 0;
+}
+
+#sort_label {
+    display: inline-block;
+    margin: 7px auto;
+}
+
+
 /* 検索ボックス */
 #search_box {
     border: 1px solid #5B5349;
