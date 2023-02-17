@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @article.increment!(:view_count, 1)
   end
 
   def new

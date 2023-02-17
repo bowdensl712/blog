@@ -4,6 +4,8 @@
 
 <h1><%= @article.title %></h1>
 
+<p>This article has been viewed <%= pluralize(@article.view_count, 'time')%>! </p>
+
 <img src="<%= @article.image_link %>" class="article_picture" alt="No Image Found">
 
 <p><%= @article.body %></p>
