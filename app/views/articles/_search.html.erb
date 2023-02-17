@@ -43,6 +43,17 @@
         <%= f.search_field :title_cont, placeholder:"Search in Title" %>
         <%= f.search_field :body_cont, placeholder:"Search in Contents" %>
         <%= f.select :language_eq, ["English", "Japanese"], include_blank: 'Any Language' %>
+        <div class="date_box">
+             <%= f.label "from:" %>
+             <%= f.search_field :created_after, value:Date.today.to_s %>
+            <!--  f.date_select :created_after, { start_year: 2022, end_year: Date.today.year, default: Date.today} %> -->
+
+         </div>
+         <div class="date_box">
+             <%= f.label "to:" %>
+             <%= f.search_field :created_before, value:Date.today.to_s %>
+             <!--  f.date_select :created_before, { start_year: 2022, end_year: Date.today.year, default: Date.today} %> -->
+         </div>
         <%= f.submit class:"submit" %>
     <% end %>
     <a id="advanced_search" onclick="toggleAdvancedSearch()">Normal Search</a>

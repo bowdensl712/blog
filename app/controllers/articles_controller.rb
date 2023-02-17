@@ -1,13 +1,11 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "shh", password: "secret", except: [:index, :show]
+  http_basic_authenticate_with name: 'shh', password: 'secret', except: %i[index show]
 
   def index
     # @q = Article.ransack(params[:q])
     # @articles = @q.result(distinct: true)
-     @articles = Article.all
+    @articles = Article.all
   end
-
-  
 
   def show
     @article = Article.find(params[:id])
@@ -49,14 +47,15 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def article_params
-      params.require(:article).permit(:title, :body, :image_link, :language, :status)
-    end
 
-    def search
-      if params[:q]
-        search_params = CGI::escapeHTML(params[:q])
-        redirect_to ("http://localhost:3000/articles?q%5Btitle_or_body_cont%5D=#{search_params}&commit=Search&commit=Search")
-      end
-    end
+  def article_params
+    params.require(:article).permit(:title, :body, :image_link, :language, :status)
+  end
+
+  def search
+    return unless params[:q]
+
+    search_params = CGI::escapeHTML(params[:q])
+    redirect_to("http://localhost:3000/articles?q%5Btitle_or_body_cont%5D=#{search_params}&commit=Search&commit=Search")
+  end
 end
