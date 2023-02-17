@@ -8,7 +8,7 @@ class Article < ApplicationRecord
   validates :image_link, length: { maximum: 1000 }
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[title body language]
+    %w[title body language created_at]
   end
 
   def self.ransackable_associations(auth_object = nil)
