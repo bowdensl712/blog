@@ -1,5 +1,19 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: articles
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  body       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  status     :integer
+#  image_link :string
+#  language   :integer
+#  view_count :integer
+#
 # 作成された記事
 class Article < ApplicationRecord
   include Visible
