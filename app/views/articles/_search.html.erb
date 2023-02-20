@@ -22,7 +22,7 @@
     } else if (window.getComputedStyle(asb).display === "block") {
       document.cookie = "search=simple; path=/";
       asb.style.display = "none";
-      sb.style.display = "block":
+      sb.style.display = "block";
     }
   }
 </script>
@@ -39,7 +39,7 @@
   <%= search_form_for(@q, url: articles_results_path, method: :get) do |f| %>
     <%= f.search_field :title_cont, placeholder:"Search in Title" %>
     <%= f.search_field :body_cont, placeholder:"Search in Contents" %>
-    <%= f.select :language_eq, ["English", "Japanese"], include_blank: 'Any Language' %>
+    <%= f.select :language_eq, [['English', 1], ['Japanese', 2]], include_blank: 'Any Language' %>
     <div class="date_box">
       <%= f.label "from:" %>
       <%= f.search_field :created_after, value:Date.today.to_s %>

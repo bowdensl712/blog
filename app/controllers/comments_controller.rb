@@ -1,6 +1,7 @@
-class CommentsController < ApplicationController
-  http_basic_authenticate_with name: 'shh', password: 'secret', only: :destroy
+# frozen_string_literal: true
 
+# コメントの作成、削除等
+class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)

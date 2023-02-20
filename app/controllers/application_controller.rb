@@ -1,12 +1,8 @@
-class ApplicationController < ActionController::Base
-  before_action :set_search
+# frozen_string_literal: true
 
-  def set_search
-    search_options = {
-      created_after: params[:created_after],
-      created_before: params[:created_before]
-    }
-    @q = Article.ransack(params[:q])
-    @article_results = @q.result(distinct: true)
-  end
+# HTTP認証を行い、set_searchメソッドを実行する
+class ApplicationController < ActionController::Base
+  http_basic_authenticate_with name: 'shh', password: 'secret'
+
+  before_action :set_search
 end

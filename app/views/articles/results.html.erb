@@ -8,8 +8,8 @@
 <%= render "sort" %>
 
 <!-- 検索-->
-<% if @article_results.public_count == 0 %>
-  <script type="text/javascript">　// 並び替えボタンを非表示する
+<% if @article_results.public_count === 0 %>
+  <script type="text/javascript">// 並び替えボタンを非表示する
     let searchBox = document.getElementById("sort_box");
     searchBox.remove();
   </script>
