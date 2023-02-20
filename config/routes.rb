@@ -2,7 +2,6 @@
 
 Rails.application.routes.draw do
   root 'articles#index'
-  get 'articles/results', to: 'articles#results'
 
   resources :articles do
     resources :comments

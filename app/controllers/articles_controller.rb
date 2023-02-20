@@ -2,13 +2,10 @@
 
 # 記事の作成、表示、削除等
 class ArticlesController < ApplicationController
-  def set_search
-    @q = Article.ransack(params[:q])
-    @article_results = @q.result(distinct: true)
-  end
-
   def index
-    @articles = Article.all
+    @q = Article.ransack(params[:q])
+    @articles = @q.result(distinct: true)
+    @all_articles = Article.all
   end
 
   def show

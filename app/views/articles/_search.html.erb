@@ -28,7 +28,7 @@
 </script>
 
 <div id="search_box">
-  <%= search_form_for(@q, url: articles_results_path, method: :get) do |f| %>
+  <%= search_form_for @q do |f| %>
     <%= f.search_field :title_or_body_cont, placeholder:"Search...", class:"search_field" %>
     <%= f.submit class:"submit" %>
   <% end %>
@@ -36,13 +36,13 @@
 </div>
 
 <div id="advanced_search_box">
-  <%= search_form_for(@q, url: articles_results_path, method: :get) do |f| %>
+  <%= search_form_for @q do |f| %>
     <%= f.search_field :title_cont, placeholder:"Search in Title" %>
     <%= f.search_field :body_cont, placeholder:"Search in Contents" %>
     <%= f.select :language_eq, [['English', 1], ['Japanese', 2]], include_blank: 'Any Language' %>
     <div class="date_box">
       <%= f.label "from:" %>
-      <%= f.search_field :created_after, value:Date.today.to_s %>
+      <%= f.search_field :created_after, value:"2023-02-01" %>
     <!--  f.date_select :created_after, { start_year: 2022, end_year: Date.today.year, default: Date.today} %> -->
 
     </div>
