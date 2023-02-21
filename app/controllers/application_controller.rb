@@ -1,8 +1,6 @@
-class ApplicationController < ActionController::Base
-    before_action :set_search
+# frozen_string_literal: true
 
-    def set_search
-        @q = Article.ransack(params[:q])
-        @article_results = @q.result(distinct: true)
-    end
+# HTTP認証を行う
+class ApplicationController < ActionController::Base
+  http_basic_authenticate_with name: 'shh', password: 'secret'
 end
