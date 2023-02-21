@@ -1,41 +1,39 @@
 <%= form_with model: article do |form| %>
 <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% article.errors.full_messages_for(:title).each do |message| %>
-
-        <div><%= message %></div>
-    <% end %>
+  <%= form.label t('title') %><br>
+  <%= form.text_field :title %>
+  <% article.errors.full_messages_for(:title).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
 </div>
 
 <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body, size: "60x10" %>
-    <% article.errors.full_messages_for(:body).each do |message| %>
-        <div><%= message %></div>
-    <% end %>
+  <%= form.label t('body') %><br>
+  <%= form.text_area :body, size: "60x10" %>
+  <% article.errors.full_messages_for(:body).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
 </div>
 
 <div>
-    <%= form.label :image_link %><br>
-    <%= form.text_field :image_link, id: "article_image"%>
-        <% article.errors.full_messages_for(:image_link).each do |message| %>
-
-        <div><%= message %></div>
-    <% end %>
+  <%= form.label t('imageLink') %><br>
+  <%= form.text_field :image_link, id: "article_image"%>
+    <% article.errors.full_messages_for(:image_link).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
 </div>
 
 <div>
-    <%= form.label :language %><br>
-    <%= form.select :language, ['English', 'Japanese'] %>
+  <%= form.label t('language') %><br>
+  <%= form.select :language, [[t('english'), 'English'], [t('japanese'), 'Japanese']] %>
 </div>
 
 <div>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived']%>
+  <%= form.label t('status') %><br>
+  <%= form.select :status, [[t('public'), 'public_article'], [t('private'), 'private_article'], [t('archived'), 'archived_article']]%>
 </div>
 
 <div>
-    <%= form.submit class:"submit" %>
+  <%= form.submit class:"submit" %>
 </div>
 <% end %>
