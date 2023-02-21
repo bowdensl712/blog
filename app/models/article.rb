@@ -25,12 +25,12 @@ class Article < ApplicationRecord
     # time = year.to_s + "-" + month.to_s + "-" + day.to_s
     time = Time.zone.parse(time)
     puts time
-    where('created_at > ?', time)
+    where('created_at >= ?', time)
   }
   scope :created_before, ->(time) {
     # time = year.to_s + "-" + month.to_s + "-" + day.to_s
     time = Time.zone.parse(time)
-    time = time + 23.hours + 59.minutes
+    time += 1.day
     puts time
     where('created_at < ?', time)
   }
