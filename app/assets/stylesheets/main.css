@@ -134,7 +134,7 @@ select {
   width: 200px;
   height: 30px;
   margin: 10px auto -40px 350px;
-  padding: 0;
+  padding: 0px 0px 5px 0px;
 }
 
 #sort_label {
@@ -199,5 +199,13 @@ footer {
 
 #footer_link:hover {
     color: #423C35;
-    text-shadow:0px 0px 1px #423C35;
+    text-shadow:0px 0px 0.6px #423C35;
+}
+
+.footerDivider {
+  display: inline-block;
+  margin: -7px 5px;
+  width: 1.5px;
+  height: 27px;
+  background-color: #5B5349;
 }

@@ -29,29 +29,29 @@
 
 <div id="search_box">
   <%= search_form_for @q do |f| %>
-    <%= f.search_field :title_or_body_cont, placeholder:"Search...", class:"search_field" %>
-    <%= f.submit class:"submit" %>
+    <%= f.search_field :title_or_body_cont, placeholder:t('searchText'), class:"search_field" %>
+    <%= f.submit t('searchButton'), class:"submit" %>
   <% end %>
-  <a id="advanced_search" onclick="toggleAdvancedSearch()">Advanced Search</a>
+  <a id="advanced_search" onclick="toggleAdvancedSearch()"><%= t('advancedSearchButton') %></a>
 </div>
 
 <div id="advanced_search_box">
   <%= search_form_for @q do |f| %>
-    <%= f.search_field :title_cont, placeholder:"Search in Title" %>
-    <%= f.search_field :body_cont, placeholder:"Search in Contents" %>
-    <%= f.select :language_eq, [['English', 1], ['Japanese', 2]], include_blank: 'Any Language' %>
+    <%= f.search_field :title_cont, placeholder:t('searchTitle') %>
+    <%= f.search_field :body_cont, placeholder:t('searchContents') %>
+    <%= f.select :language_eq, [[t('english'), 1], [t('japanese'), 2]], include_blank: t('searchAnyLanguage') %>
     <div class="date_box">
-      <%= f.label "from:" %>
+      <%= f.label t('searchDateFrom') %>
       <%= f.search_field :created_after, value:"2023-02-01" %>
     <!--  f.date_select :created_after, { start_year: 2022, end_year: Date.today.year, default: Date.today} %> -->
 
     </div>
     <div class="date_box">
-      <%= f.label "to:" %>
+      <%= f.label t('searchDateTo') %>
       <%= f.search_field :created_before, value:Date.today.to_s %>
       <!--  f.date_select :created_before, { start_year: 2022, end_year: Date.today.year, default: Date.today} %> -->
       </div>
-    <%= f.submit class:"submit" %>
+    <%= f.submit t('searchButton'), class:"submit" %>
   <% end %>
-  <a id="advanced_search" onclick="toggleAdvancedSearch()">Normal Search</a>
+  <a id="advanced_search" onclick="toggleAdvancedSearch()"><%= t('normalSearchButton') %></a>
 </div>

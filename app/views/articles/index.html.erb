@@ -1,26 +1,26 @@
 <% content_for :title do %>
 <% if @articles.public_count == @all_articles.public_count %>
-    Welcome to Postblog
+    <%= t('welcome')%>
   <% else %>
-    Search Results - Postblog
+    <%=t('searchResults') %> - Postblog
   <% end %>
 <% end %>
 
-<h1>Postblog Articles</h1>
+<h1><%=t('indexHeader') %></h1>
 <%= render "search" %>
 <%= render "sort" %>
 
 <!-- 検索-->
 <% if @articles.public_count == @all_articles.public_count %>
-  <p>Our blog has <%= Article.public_count %> articles and counting! </p>
+  <p><%=t('articleCountStart') %> <%= Article.public_count %> <%=t('articleCountEnd') %> </p>
 <% elsif @articles.public_count == 0 %>
-  <p>No articles found!</p>
+  <p><%=t('noArticlesFound') %></p>
   <img src="../assets/no_results_found.png" style="all: revert; margin-top: -54px; width: 500px;">
 <% elsif @articles.public_count == 1 %>
   <% controller.redirect_to @articles.first %>
 <% else %>
 
-  <p>Results: <%= @articles.public_count %> articles found.</p>
+  <p><%=t('results') %> <%= @articles.public_count %> <%=t('articlesFound') %></p>
 <% end %>
 
 
@@ -29,7 +29,7 @@
   <% @articles.each do |article|  %>
     <% unless article.archived? %>
       <%= link_to article, class:"article_thumbnail" do %>
-        <%= image_tag article.image_link, class:"thumbnail_image", alt:"image not found"%>
+        <%= image_tag article.image_link, class:"thumbnail_image", alt:t('noImageFound')%>
         <div class="thumbnail_text">
           <!-- ↓↓記事の言語を表示する↓↓ -->
           <% if article.language=="English" %>
@@ -44,6 +44,6 @@
   <% end %>
 </div>
 
-<%= link_to "Create a New Article", new_article_path, class: "new_article"  %>
+<%= link_to t('createArticle'), new_article_path, class: "new_article"  %>
 
 <%= render "footer" %>

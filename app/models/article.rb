@@ -21,13 +21,13 @@ class Article < ApplicationRecord
     %w[articles comments]
   end
 
-  scope :created_after, ->(time) {
+  scope :created_after, lambda { |time|
     # time = year.to_s + "-" + month.to_s + "-" + day.to_s
     time = Time.zone.parse(time)
     puts time
     where('created_at > ?', time)
   }
-  scope :created_before, ->(time) {
+  scope :created_before, lambda { |time|
     # time = year.to_s + "-" + month.to_s + "-" + day.to_s
     time = Time.zone.parse(time)
     time = time + 23.hours + 59.minutes
