@@ -7,6 +7,21 @@ ja:
         update: '記事を更新する'
       comment:
         create: '投稿する'
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: '記事が見つかりませんでした！'
+          one:  '%{count}件の記事があります！'
+          other: '%{count}件の記事があります！'
+      more_pages:
+        display_entries: " %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> を表示中（全体で <b>%{total}</b> 件）"
+  views:
+    pagination:
+      first: '« 最初'
+      last: '最後 »'
+      previous: '‹ 前へ'
+      next: '次へ ›'
+      truncate: '...'
 
   noImageFound: '画像が見つかりませんでした'
 
@@ -30,6 +45,7 @@ ja:
 
   archived: '保管'
 
+  article: ''
 
   # 並び替え
 
@@ -63,17 +79,7 @@ ja:
 
   searchResults: '検索結果'
 
-  articleCountStart: 'このブログは'
-
-  articleCountEnd: '件の記事があります！'
-
-  noArticlesFound: '記事が見つかりませんでした！'
-
   createArticle: '新しい記事を作成する'
-
-  results: '検索結果：'
-
-  articlesFound: '件'
 
   # article#index
   welcome: 'Postblogへようこそ'

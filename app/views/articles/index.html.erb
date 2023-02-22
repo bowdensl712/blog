@@ -10,17 +10,13 @@
 <%= render "search" %>
 <%= render "sort" %>
 
-<!-- 検索-->
-<% if @articles.public_count == @all_articles.public_count %>
-  <p><%=t('articleCountStart') %> <%= Article.public_count %> <%=t('articleCountEnd') %> </p>
-<% elsif @articles.public_count == 0 %>
-  <p><%=t('noArticlesFound') %></p>
-  <img src="../assets/no_results_found.png" style="all: revert; margin-top: -54px; width: 500px;">
-<% elsif @articles.public_count == 1 %>
-  <% controller.redirect_to @articles.first %>
-<% else %>
+<!-- 記事の数 -->
+<div class='entry_count' >
+  <%= page_entries_info @articles, entry_name: t('article')  %>
+</div>
 
-  <p><%=t('results') %> <%= @articles.public_count %> <%=t('articlesFound') %></p>
+<% if @articles.public_count == 0 %>
+  <img src="../assets/no_results_found.png" style="all: revert; margin-top: -54px; width: 500px;">
 <% end %>
 
 
@@ -43,6 +39,9 @@
     <% end %>
   <% end %>
 </div>
+
+
+<%= paginate @articles %>
 
 <%= link_to t('createArticle'), new_article_path, class: "new_article"  %>
 

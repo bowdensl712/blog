@@ -38,6 +38,14 @@ en:
         update: 'Update Article'
       comment:
         create: 'Create Comment'
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: 'No articles found!'
+          one:  '1 article found.'
+          other: '%{count} articles found.'
+      more_pages:
+        display_entries: " Displaying %{entry_name} %{first}&nbsp;-&nbsp;%{last} of %{total}"
 
   noImageFound: 'No Image Found'
 
@@ -61,6 +69,7 @@ en:
 
   archived: 'Archived'
 
+  article: 'article'
 
   # 並び替え
 
@@ -94,17 +103,8 @@ en:
 
   searchResults: 'Search Results'
 
-  articleCountStart: 'Our blog has'
-
-  articleCountEnd: 'articles and counting!'
-
-  noArticlesFound: 'No articles found!'
-
   createArticle: 'Create a New Article'
 
-  results: 'Results:'
-
-  articlesFound: 'articles found.'
 
   # article#index
   welcome: 'Welcome to Postblog'

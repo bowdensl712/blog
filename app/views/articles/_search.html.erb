@@ -30,6 +30,7 @@
 <div id="search_box">
   <%= search_form_for @q do |f| %>
     <%= f.search_field :title_or_body_cont, placeholder:t('searchText'), class:"search_field" %>
+    <%= hidden_field_tag :locale, params[:locale] %>
     <%= f.submit t('searchButton'), class:"submit" %>
   <% end %>
   <a id="advanced_search" onclick="toggleAdvancedSearch()"><%= t('advancedSearchButton') %></a>
@@ -43,14 +44,13 @@
     <div class="date_box">
       <%= f.label t('searchDateFrom') %>
       <%= f.search_field :created_after, value:"2023-02-01" %>
-    <!--  f.date_select :created_after, { start_year: 2022, end_year: Date.today.year, default: Date.today} %> -->
 
     </div>
     <div class="date_box">
       <%= f.label t('searchDateTo') %>
       <%= f.search_field :created_before, value:Date.today.to_s %>
-      <!--  f.date_select :created_before, { start_year: 2022, end_year: Date.today.year, default: Date.today} %> -->
       </div>
+    <%= hidden_field_tag :locale, params[:locale] %>
     <%= f.submit t('searchButton'), class:"submit" %>
   <% end %>
   <a id="advanced_search" onclick="toggleAdvancedSearch()"><%= t('normalSearchButton') %></a>
