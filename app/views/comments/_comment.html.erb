@@ -1,19 +1,19 @@
 
 <% unless comment.archived? %>
     <p>
-        <strong>Commenter:</strong>
+        <strong><%= t('commenterLabel') %></strong>
         <%= comment.commenter %>
     </p>
 
     <p>
-        <strong>Comment:</strong>
+        <strong><%= t('commentLabel') %></strong>
         <%= comment.body %>
     </p>
-    <img src="<%= comment.image_link %>" alt="No image found.">
+    <img src="<%= comment.image_link %>" alt=<%= t('noImageFound') %>>
     <p>
-        <%= link_to "Delete Comment", [comment.article, comment], data: {
+        <%= link_to t('deleteComment'), [comment.article, comment], data: {
             turbo_method: :delete,
-            turbo_confirm: "Are you sure?"}%>
+            turbo_confirm: t('youSure')}%>
     </p>
 
 <% end %>

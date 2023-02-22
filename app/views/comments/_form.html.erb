@@ -1,19 +1,19 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
 <p>
-    <%= form.label "Name" %><br>
+    <%= form.label t('name') %><br>
     <%= form.text_field :commenter %>
 </p>
 <p>
-    <%= form.label "Comment" %><br>
+    <%= form.label t('comment') %><br>
     <%= form.text_area :body, size: "40x7" %>
 </p>
 <p>
-    <%= form.label :image_link %><br>
+    <%= form.label t('imageLink') %><br>
     <%= form.text_field :image_link %>
 </p>
 <p>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    <%= form.label t('status') %><br>
+    <%= form.select :status, [[t('public'), 'public_comment'], [t('private'), 'private_comment'], [t('archived'), 'archived_comment']], selected: 'public_article' %>
 </p>
 <p>
     <%= form.submit class:"submit" %>
