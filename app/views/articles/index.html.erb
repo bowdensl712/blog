@@ -1,22 +1,31 @@
 <% content_for :title do %>
-  Welcome to Postblog
+<% if @articles.public_count == @all_articles.public_count %>
+    <%= t('welcome')%>
+  <% else %>
+    <%=t('searchResults') %> - Postblog
+  <% end %>
 <% end %>
 
-<script type="text/javascript">
-  document.cookie = "search=simple;path=/";
-</script>
-
-<h1>Postblog Articles</h1>
+<h1><%=t('indexHeader') %></h1>
 <%= render "search" %>
+<%= render "sort" %>
 
-<p>Our blog has <%= Article.public_count %> articles and counting! </p>
+<!-- 記事の数 -->
+<div class='entry_count' >
+  <%= page_entries_info @articles, entry_name: t('article')  %>
+</div>
+
+<% if @articles.public_count == 0 %>
+  <img src="../assets/no_results_found.png" style="all: revert; margin-top: -54px; width: 500px;">
+<% end %>
+
 
 <!-- 記事一覧 -->
 <div class="grid">
   <% @articles.each do |article|  %>
     <% unless article.archived? %>
       <%= link_to article, class:"article_thumbnail" do %>
-        <%= image_tag article.image_link, class:"thumbnail_image", alt:"image not found"%>
+        <%= image_tag article.image_link, class:"thumbnail_image", alt:t('noImageFound')%>
         <div class="thumbnail_text">
           <!-- ↓↓記事の言語を表示する↓↓ -->
           <% if article.language=="English" %>
@@ -31,6 +40,9 @@
   <% end %>
 </div>
 
-<%= link_to "Create a New Article", new_article_path, class: "new_article"  %>
+
+<%= paginate @articles %>
+
+<%= link_to t('createArticle'), new_article_path, class: "new_article"  %>
 
 <%= render "footer" %>

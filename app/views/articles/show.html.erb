@@ -4,24 +4,32 @@
 
 <h1><%= @article.title %></h1>
 
-<img src="<%= @article.image_link %>" class="article_picture" alt="No Image Found">
+<img src="<%= @article.image_link %>" class="article_picture" alt=<%= t('noImageFound') %>>
 
 <p><%= @article.body %></p>
 
 <ul>
-    <li>Language: <%= @article.language %></li>
-    <li><%= link_to "Edit", edit_article_path(@article) %></li>
-    <li><%= link_to "Delete", article_path(@article), data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-    }%></li>
-    <li><%= link_to "Return to home", root_path %></li>
+  <li>
+    <%= t('languageDisplay') %> 
+    <% if @article.language=='English' %>
+      <%=  t('english') %>
+    <% elsif @article.language=='Japanese' %>
+      <%= t('japanese') %>
+    <% end %>
+  </li>
+  <li><%= link_to t('edit'), edit_article_path(@article) %></li>
+  <li><%= link_to t('delete'), article_path(@article), data: {
+    turbo_method: :delete,
+    turbo_confirm: t('youSure')
+  }%></li>
+  <li><%= link_to t('postToSlack'), article_path(@article), data: { turbo_method: :post } %></li>
+  <li><%= link_to t('returnHome'), root_path %></li>
 </ul>
 
-<h2>Comments</h2>
+<h2><%= t('commentsHeader') %></h2>
 <%= render @article.comments %>
 
-<h2>Add a Comment</h2>
+<h2><%= t('addComment') %></h2>
 <%= render 'comments/form' %>
 
 <%= render 'footer'%>

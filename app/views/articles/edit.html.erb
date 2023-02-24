@@ -1,8 +1,8 @@
 <% content_for :title do %>
-  Edit Article - Postblog
+  <%= t('editArticle') %> - Postblog
 <% end %>
 
-<h1>Edit Article</h1>
+<h1><%= t('editArticle') %></h1>
 
 <%= render "form", article: @article %>
 
