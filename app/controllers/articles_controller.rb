@@ -48,6 +48,20 @@ class ArticlesController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  # Slackチャンネルに投稿する
+  def upload
+    @article = Article.find(params[:id])
+    conn = Faraday.new(
+      url: ENV['SLACK_INCOMING_WEBHOOK_URL'],
+      headers: { 'Content-Type' => 'application/json' }
+    )
+    conn.post do |req| # 記事の題名、本文、リンクをSlackに送付する。Localeによってメッセージ雛形が変わります。
+      req.body = JSON.generate(
+        'text': "#{t('slackHeader')}\n#{@article.title}\n#{@article.body}\n#{t('slackLink')}http://localhost:3000/articles/#{@article.id}?locale=#{I18n.locale}"
+      )
+    end
+  end
+
   private
 
   def article_params

@@ -129,6 +129,20 @@ en:
 
   languageDisplay: 'Language:'
 
+  # Slackに投稿
+
+  postToSlack: 'Post to Slack'
+
+  slackHeader: 'Postblog Update:'
+
+  slackLink: 'Read the full article:'
+
+  postSuccess: 'Posted successfully!'
+
+  postErrorStart: 'Post failed. A'
+
+  postErrorEnd: 'error has occured.'
+
   # article#update
   editArticle: 'Edit Article'
 

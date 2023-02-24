@@ -22,6 +22,7 @@
     turbo_method: :delete,
     turbo_confirm: t('youSure')
   }%></li>
+  <li><%= link_to t('postToSlack'), article_path(@article), data: { turbo_method: :post } %></li>
   <li><%= link_to t('returnHome'), root_path %></li>
 </ul>
 

@@ -104,6 +104,20 @@ ja:
 
   languageDisplay: '言語：'
 
+    # Slackに投稿
+
+  postToSlack: 'Slackに投稿する'
+
+  slackHeader: 'Postblog投稿: '
+
+  slackLink: 'こちらでご覧ください: '
+
+  postSuccess: '正常に投稿しました!'
+
+  postErrorStart: '投稿が失敗しました。'
+
+  postErrorEnd: 'エラーが発生しました。'
+
   # article#update
   editArticle: '記事を編集する'
 
