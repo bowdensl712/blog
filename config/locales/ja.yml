@@ -104,7 +104,9 @@ ja:
 
   languageDisplay: '言語：'
 
-    # Slackに投稿
+  poster: '投稿者：'
+
+  # Slackに投稿
 
   postToSlack: 'Slackに投稿する'
 

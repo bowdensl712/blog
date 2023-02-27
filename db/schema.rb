@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_27_021226) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_27_065244) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_021226) do
     t.string "image_link"
     t.integer "language"
     t.integer "view_count"
+    t.string "email"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_021226) do
     t.datetime "updated_at", null: false
     t.integer "status"
     t.string "image_link"
+    t.string "email"
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 

@@ -33,6 +33,8 @@
   <%= form.select :status, [[t('public'), 'public_article'], [t('private'), 'private_article'], [t('archived'), 'archived_article']]%>
 </div>
 
+<%= form.hidden_field :email, value: current_user.email %>
+
 <div>
   <%= form.submit class:"submit" %>
 </div>

@@ -8,6 +8,7 @@
 <img src="<%= @article.image_link %>" class="article_picture" alt=<%= t('noImageFound') %>>
 
 <p><%= @article.body %></p>
+<p><%= t('poster') %><%= @article.email %></p>
 
 <ul>
   <li>
@@ -18,11 +19,13 @@
       <%= t('japanese') %>
     <% end %>
   </li>
-  <li><%= link_to t('edit'), edit_article_path(@article) %></li>
-  <li><%= link_to t('delete'), article_path(@article), data: {
-    turbo_method: :delete,
-    turbo_confirm: t('youSure')
-  }%></li>
+  <% if @article.email == current_user.email %>
+    <li><%= link_to t('edit'), edit_article_path(@article) %></li>
+    <li><%= link_to t('delete'), article_path(@article), data: {
+      turbo_method: :delete,
+      turbo_confirm: t('youSure')
+    }%></li>
+  <% end %>
   <li><%= link_to t('postToSlack'), article_path(@article), data: { turbo_method: :post } %></li>
   <li><%= link_to t('returnHome'), root_path %></li>
 </ul>

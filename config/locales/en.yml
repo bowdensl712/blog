@@ -129,6 +129,8 @@ en:
 
   languageDisplay: 'Language:'
 
+  poster: 'Poster: '
+
   # Slackに投稿
 
   postToSlack: 'Post to Slack'

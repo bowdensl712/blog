@@ -65,7 +65,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :image_link, :language, :status)
+    params.require(:article).permit(:title, :body, :image_link, :language, :status, :email)
   end
 
   def search
