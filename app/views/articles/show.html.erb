@@ -3,6 +3,7 @@
 <% end %>
 
 <h1><%= @article.title %></h1>
+<%= render 'devise_menu' %>
 
 <img src="<%= @article.image_link %>" class="article_picture" alt=<%= t('noImageFound') %>>
 

@@ -158,6 +158,13 @@ en:
 
   deleteComment: 'Delete Comment'
 
+  # Deviseメニュー
+  username: 'Username:'
+
+  userCreatedDate: 'Account created:'
+
+  logout: 'Log out'
+
   # フッター
   reserved: 'Reserved 2023'
 

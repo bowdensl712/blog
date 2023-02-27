@@ -2,7 +2,7 @@
 
 # HTTP認証を行い、Localeを設定する
 class ApplicationController < ActionController::Base
-  http_basic_authenticate_with name: 'shh', password: 'secret'
+  before_action :authenticate_user!
   before_action :set_locale
 
   def pick_locale(selected_locale)

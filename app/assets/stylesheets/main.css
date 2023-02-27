@@ -11,12 +11,15 @@ body {
 }
 
 h1 {
-    font-size: 6vh;
+    font-size: 45px;
     color: #DFD5A5;
     text-shadow: 1.5px 1.5px #344B58;
     margin: 0 0 10px 0;
-    padding: 13px 0;
     background-color: #628395;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h2 {
@@ -182,6 +185,29 @@ select {
 .date_box {
   display: inline-block;
   margin: 4px;
+}
+
+/* Deviseメニュー */
+
+.devise_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 80px;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  background-color: #516C7B;
+  color: #DFD5A5;
+  font-size: 17px;
+  text-shadow:0px 0px 0.6px #DFD5A5;
+}
+
+.devise_logout {
+  margin-left: auto;
+  
 }
 
 /* フッター */

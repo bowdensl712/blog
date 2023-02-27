@@ -133,6 +133,13 @@ ja:
 
   deleteComment: 'コメントを削除する'
 
+  # Deviseメニュー
+  username: 'ユーザー名:'
+
+  userCreatedDate: 'アカウント作成日:'
+
+  logout: 'ログアウト'
+
   # フッター
   reserved: 'Reserved 2023'
 
