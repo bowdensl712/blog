@@ -142,6 +142,8 @@ ja:
 
   logout: 'ログアウト'
 
+  editAccount: 'ｱｶｳﾝﾄ編集'
+
   # フッター
   reserved: 'Reserved 2023'
 
@@ -149,3 +151,4 @@ ja:
   
   selectJapanese: '日本語 (Japanese)'
 
+  adminMode: 'Adminでログイン中!'

@@ -1,57 +1,57 @@
-<script type="text/javascript">
+<script type='text/javascript'>
   window.onload = checkSearchCookie();
   //前ページのクッキーを確認する
   function checkSearchCookie() {
-    let asb = document.getElementById("advanced_search_box");
-    let sb = document.getElementById("search_box");
-    if (document.cookie === "search=advanced") {
-      asb.style.display = "block";
-      sb.style.display = "none";
-      console.log("Advanced Search toggled!")
+    let asb = document.getElementById('advanced_search_box');
+    let sb = document.getElementById('search_box');
+    if (document.cookie === 'search=advanced') {
+      asb.style.display = 'block';
+      sb.style.display = 'none';
+      console.log('Advanced Search toggled!')
     }
   }
   
   //検索ボックスを切り替えて、クッキを生成・削除する
   function toggleAdvancedSearch() {
-    let asb = document.getElementById("advanced_search_box");
-    let sb = document.getElementById("search_box");
-    if (window.getComputedStyle(asb).display === "none") {
-      document.cookie = "search=advanced; path=/";
-      asb.style.display = "block";
-      sb.style.display = "none";
-    } else if (window.getComputedStyle(asb).display === "block") {
-      document.cookie = "search=simple; path=/";
-      asb.style.display = "none";
-      sb.style.display = "block";
+    let asb = document.getElementById('advanced_search_box');
+    let sb = document.getElementById('search_box');
+    if (window.getComputedStyle(asb).display === 'none') {
+      document.cookie = 'search=advanced; path=/';
+      asb.style.display = 'block';
+      sb.style.display = 'none';
+    } else if (window.getComputedStyle(asb).display === 'block') {
+      document.cookie = 'search=simple; path=/';
+      asb.style.display = 'none';
+      sb.style.display = 'block';
     }
   }
 </script>
 
-<div id="search_box">
+<div id='search_box'>
   <%= search_form_for @q do |f| %>
-    <%= f.search_field :title_or_body_cont, placeholder:t('searchText'), class:"search_field" %>
+    <%= f.search_field :title_or_body_cont, placeholder:t('searchText'), class:'search_field' %>
     <%= hidden_field_tag :locale, params[:locale] %>
-    <%= f.submit t('searchButton'), class:"submit" %>
+    <%= f.submit t('searchButton'), class:'submit' %>
   <% end %>
-  <a id="advanced_search" onclick="toggleAdvancedSearch()"><%= t('advancedSearchButton') %></a>
+  <a id='advanced_search' onclick="toggleAdvancedSearch()"><%= t('advancedSearchButton') %></a>
 </div>
 
-<div id="advanced_search_box">
+<div id='advanced_search_box'>
   <%= search_form_for @q do |f| %>
     <%= f.search_field :title_cont, placeholder:t('searchTitle') %>
     <%= f.search_field :body_cont, placeholder:t('searchContents') %>
     <%= f.select :language_eq, [[t('english'), 1], [t('japanese'), 2]], include_blank: t('searchAnyLanguage') %>
-    <div class="date_box">
+    <div class='date_box'>
       <%= f.label t('searchDateFrom') %>
-      <%= f.search_field :created_after, value:"2023-02-01" %>
+      <%= f.search_field :created_after, value:'2023-02-01' %>
 
     </div>
-    <div class="date_box">
+    <div class='date_box'>
       <%= f.label t('searchDateTo') %>
       <%= f.search_field :created_before, value:Date.today.to_s %>
       </div>
     <%= hidden_field_tag :locale, params[:locale] %>
-    <%= f.submit t('searchButton'), class:"submit" %>
+    <%= f.submit t('searchButton'), class:'submit' %>
   <% end %>
-  <a id="advanced_search" onclick="toggleAdvancedSearch()"><%= t('normalSearchButton') %></a>
+  <a id='advanced_search' onclick="toggleAdvancedSearch()"><%= t('normalSearchButton') %></a>
 </div>

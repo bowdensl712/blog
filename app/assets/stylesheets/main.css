@@ -193,7 +193,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 350px;
+  width: 370px;
   height: 80px;
   position: absolute;
   padding: 10px;
@@ -205,9 +205,17 @@ select {
   text-shadow:0px 0px 0.6px #DFD5A5;
 }
 
-.devise_logout {
+.button_container {
   margin-left: auto;
-  
+  height: auto;
+  width: 120px;
+}
+
+/* Devise Views */
+.remember_me {
+display: inline;
+width: 100px;
+margin-left: 130px;
 }
 
 /* フッター */
@@ -240,12 +248,16 @@ footer {
   background-color: #5B5349;
 }
 
+.admin_mode {
+  display: inline;
+  font-weight: bold;
+}
+
 /* Alert、Message表示 */
 .alert {
   position: absolute;
   top: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   left: 0;
   right: 0;
   text-align: center;

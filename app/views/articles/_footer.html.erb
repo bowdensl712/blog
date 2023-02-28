@@ -1,6 +1,6 @@
 <footer>
   <span class='footer_copyright'>
-    <i><a href="<%= root_path %>" id="footer_link">Postblog Inc.</a> <%= t('reserved') %></i>
+    <i><a href="<%= root_path %>" id='footer_link'>Postblog Inc.</a> <%= t('reserved') %></i>
   </span>
 
   <span class='footer_divider'></span>
@@ -10,4 +10,9 @@
     <%= link_to t('selectJapanese'), root_path(locale: :ja) %> 
     <%= link_to t('selectEnglish'), root_path(locale: :en) %>
   </span>
+
+  <% if current_user.admin? %>
+    <span class='footer_divider'></span>
+    <p class='admin_mode'><%= t('adminMode') %></p>
+  <% end %>
 </footer>

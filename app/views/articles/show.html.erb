@@ -5,7 +5,7 @@
 <h1><%= @article.title %></h1>
 <%= render 'devise_menu' %>
 
-<img src="<%= @article.image_link %>" class="article_picture" alt=<%= t('noImageFound') %>>
+<img src="<%= @article.image_link %>" class='article_picture' alt=<%= t('noImageFound') %>>
 
 <p><%= @article.body %></p>
 <p><%= t('poster') %><%= @article.email %></p>
@@ -19,7 +19,7 @@
       <%= t('japanese') %>
     <% end %>
   </li>
-  <% if @article.email == current_user.email %>
+  <% if @article.email == current_user.email || current_user.admin? %>
     <li><%= link_to t('edit'), edit_article_path(@article) %></li>
     <li><%= link_to t('delete'), article_path(@article), data: {
       turbo_method: :delete,

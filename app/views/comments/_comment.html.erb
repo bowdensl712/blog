@@ -10,7 +10,7 @@
         <%= comment.body %>
     </p>
     <img src="<%= comment.image_link %>" alt=<%= t('noImageFound') %>>
-    <% if comment.email == current_user.email %>
+    <% if comment.email == current_user.email || current_user.admin?  %>
       <p>
           <%= link_to t('deleteComment'), [comment.article, comment], data: {
               turbo_method: :delete,

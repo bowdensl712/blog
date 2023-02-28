@@ -18,9 +18,13 @@
   </head>
 
   <body>
-    <% flash.each do |message_type, message| %>
-      <div class="alert"><%= message %></div>
-    <% end %>
+  <div class="alert">
+      <% flash.each do |message_type, message| %>
+        <% unless message_type.to_s == 'timedout' %>
+        <%= message %><br>
+        <% end %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

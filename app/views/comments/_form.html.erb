@@ -5,7 +5,7 @@
 </p>
 <p>
     <%= form.label t('comment') %><br>
-    <%= form.text_area :body, size: "40x7" %>
+    <%= form.text_area :body, size: '40x7' %>
 </p>
 <p>
     <%= form.label t('imageLink') %><br>
@@ -17,6 +17,6 @@
 </p>
 <p>
 <%= form.hidden_field :email, value: current_user.email %>
-    <%= form.submit class:"submit" %>
+    <%= form.submit class:'submit' %>
 </p>
 <% end %>

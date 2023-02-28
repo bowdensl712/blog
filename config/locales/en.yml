@@ -167,9 +167,13 @@ en:
 
   logout: 'Log out'
 
+  editAccount: 'Edit Account'
+
   # フッター
   reserved: 'Reserved 2023'
 
   selectEnglish: 'English (英語)'
   
   selectJapanese: 'Japanese (日本語)'
+
+  adminMode: 'Logged in as Admin!'

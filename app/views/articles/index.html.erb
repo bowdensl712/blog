@@ -17,21 +17,21 @@
 </div>
 
 <% if @articles.public_count == 0 %>
-  <img src="../assets/no_results_found.png" style="all: revert; margin-top: -54px; width: 500px;">
+  <img src='../assets/no_results_found.png' style='all: revert; margin-top: -54px; width: 500px;'>
 <% end %>
 
 
 <!-- 記事一覧 -->
-<div class="grid">
+<div class='grid'>
   <% @articles.each do |article|  %>
     <% unless article.archived? %>
-      <%= link_to article, class:"article_thumbnail" do %>
-        <%= image_tag article.image_link, class:"thumbnail_image", alt:t('noImageFound')%>
-        <div class="thumbnail_text">
+      <%= link_to article, class:'article_thumbnail' do %>
+        <%= image_tag article.image_link, class:'thumbnail_image', alt:t('noImageFound')%>
+        <div class='thumbnail_text'>
           <!-- ↓↓記事の言語を表示する↓↓ -->
-          <% if article.language=="English" %>
+          <% if article.language=='English' %>
             🇬🇧
-          <% elsif article.language=="Japanese" %>
+          <% elsif article.language=='Japanese' %>
             🇯🇵
           <% end %>
           <%= article.title%>
@@ -44,6 +44,6 @@
 
 <%= paginate @articles %>
 
-<%= link_to t('createArticle'), new_article_path, class: "new_article"  %>
+<%= link_to t('createArticle'), new_article_path, class: 'new_article'  %>
 
-<%= render "footer" %>
+<%= render 'footer' %>
