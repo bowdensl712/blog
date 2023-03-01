@@ -42,6 +42,7 @@ a:hover {
 
 img {
     border: 1.5px solid #5B5349;
+    max-height: 200px;
 }
 
 #article_image {
@@ -101,6 +102,7 @@ select {
     position: relative;
     width: 250px;
     height: auto;
+    max-height: 200px;
 }
 
 .article_thumbnail:hover {
