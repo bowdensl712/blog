@@ -1,0 +1,154 @@
+ja:
+  # General
+  helpers:
+    submit:
+      article:
+        create: '記事を投稿する'
+        update: '記事を更新する'
+      comment:
+        create: '投稿する'
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: '記事が見つかりませんでした！'
+          one:  '%{count}件の記事があります！'
+          other: '%{count}件の記事があります！'
+      more_pages:
+        display_entries: " %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> を表示中（全体で <b>%{total}</b> 件）"
+  views:
+    pagination:
+      first: '« 最初'
+      last: '最後 »'
+      previous: '‹ 前へ'
+      next: '次へ ›'
+      truncate: '...'
+
+  noImageFound: '画像が見つかりませんでした'
+
+  language: '言語'
+
+  english: '英語'
+
+  japanese: '日本語'
+
+  body: '本文'
+
+  title: '題名'
+
+  imageLink: '画像リンク'
+
+  status: 'ステータス'
+
+  public: '公開'
+
+  private: '非公開'
+
+  archived: '保管'
+
+  article: ''
+
+  # 並び替え
+
+  sort: '並び替え：'
+
+  sortTitle: '題名'
+
+  sortDate: '日付'
+
+  # 検索
+
+  searchText: '検索...'
+
+  searchButton: '検索'
+
+  advancedSearchButton: '（絞り込み検索）'
+  
+  normalSearchButton: '（一般検索）'
+
+  searchDateFrom: '開始日：'
+
+  searchDateTo: '終了日：'
+
+  searchAnyLanguage: '全ての言語' 
+
+  searchTitle: '題名から探す'
+
+  searchContents: '本文から探す'
+
+  #検索結果
+
+  searchResults: '検索結果'
+
+  createArticle: '新しい記事を作成する'
+
+  # article#index
+  welcome: 'Postblogへようこそ'
+
+  indexHeader: 'Postblog 記事一覧'
+
+  # article#create
+  newArticle: '新しい記事'
+
+  # article#show
+  edit: '編集する'
+
+  delete: '削除する'
+
+  youSure: 'よろしいですか？'
+
+  returnHome: 'ホームに戻る'
+
+  commentsHeader: 'コメント'
+
+  addComment: 'コメントを追加'
+
+  languageDisplay: '言語：'
+
+  poster: '投稿者：'
+
+  # Slackに投稿
+
+  postToSlack: 'Slackに投稿する'
+
+  slackHeader: 'Postblog投稿: '
+
+  slackLink: 'こちらでご覧ください: '
+
+  postSuccess: '正常に投稿しました!'
+
+  postErrorStart: '投稿が失敗しました。'
+
+  postErrorEnd: 'エラーが発生しました。'
+
+  # article#update
+  editArticle: '記事を編集する'
+
+  #comments/_form.html.erb
+  name: '名前'
+
+  comment: 'コメント'
+
+  # comments/comment.html.erb
+  commenterLabel: '投稿者:'
+
+  commentLabel: 'コメント：'
+
+  deleteComment: 'コメントを削除する'
+
+  # Deviseメニュー
+  username: 'ユーザー名:'
+
+  userCreatedDate: 'アカウント作成日:'
+
+  logout: 'ログアウト'
+
+  editAccount: 'ｱｶｳﾝﾄ編集'
+
+  # フッター
+  reserved: 'Reserved 2023'
+
+  selectEnglish: '英語 (English)'
+  
+  selectJapanese: '日本語 (Japanese)'
+
+  adminMode: 'Adminでログイン中!'

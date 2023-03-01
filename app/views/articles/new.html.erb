@@ -1,9 +1,10 @@
 <% content_for :title do %>
-  New Article - Postblog
+  <%= t('newArticle') %> - Postblog
 <% end %>
 
-<h1>New Article</h1>
+<h1><%= t('newArticle') %></h1>
+<%= render 'devise_menu' %>
 
-<%= render "form", article: @article %>
+<%= render 'form', article: @article %>
 
 <%= render 'footer'%>

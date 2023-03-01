@@ -30,4 +30,150 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  # General
+  helpers:
+    submit:
+      article:
+        create: 'Create Article'
+        update: 'Update Article'
+      comment:
+        create: 'Create Comment'
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: 'No articles found!'
+          one:  '1 article found.'
+          other: '%{count} articles found.'
+      more_pages:
+        display_entries: " Displaying %{entry_name} %{first}&nbsp;-&nbsp;%{last} of %{total}"
+
+  noImageFound: 'No Image Found'
+
+  language: 'Language'
+
+  english: 'English'
+
+  japanese: 'Japanese'
+
+  body: 'Body'
+
+  title: 'Title'
+
+  imageLink: 'Image Link'
+
+  status: 'Status'
+
+  public: 'Public'
+
+  private: 'Private'
+
+  archived: 'Archived'
+
+  article: 'article'
+
+  # 並び替え
+
+  sort: 'Sort By:'
+
+  sortTitle: 'Title'
+
+  sortDate: 'Date'
+
+  # 検索
+
+  searchText: 'Search...'
+
+  searchButton: 'Search'
+
+  advancedSearchButton: 'Show Advanced Search'
+  
+  normalSearchButton: 'Show Normal Search'
+
+  searchDateFrom: 'From:'
+
+  searchDateTo: 'To:'
+
+  searchAnyLanguage: 'Any Language' 
+
+  searchTitle: 'Search in Title'
+
+  searchContents: 'Search in Contents'
+
+  #検索結果
+
+  searchResults: 'Search Results'
+
+  createArticle: 'Create a New Article'
+
+
+  # article#index
+  welcome: 'Welcome to Postblog'
+
+  indexHeader: 'Postblog Articles'
+
+  # article#create
+  newArticle: 'New Article'
+
+  # article#show
+  edit: 'Edit'
+
+  delete: 'Delete'
+
+  youSure: 'Are you sure?'
+
+  returnHome: 'Return to home'
+
+  commentsHeader: 'Comments'
+
+  addComment: 'Add a Comment'
+
+  languageDisplay: 'Language:'
+
+  poster: 'Poster: '
+
+  # Slackに投稿
+
+  postToSlack: 'Post to Slack'
+
+  slackHeader: 'Postblog Update:'
+
+  slackLink: 'Read the full article:'
+
+  postSuccess: 'Posted successfully!'
+
+  postErrorStart: 'Post failed. A'
+
+  postErrorEnd: 'error has occured.'
+
+  # article#update
+  editArticle: 'Edit Article'
+
+  #comments/_form.html.erb
+  name: 'Name'
+
+  comment: 'Comment'
+
+  # comments/comment.html.erb
+  commenterLabel: 'Commenter:'
+
+  commentLabel: 'Comment:'
+
+  deleteComment: 'Delete Comment'
+
+  # Deviseメニュー
+  username: 'Username:'
+
+  userCreatedDate: 'Account created:'
+
+  logout: 'Log out'
+
+  editAccount: 'Edit Account'
+
+  # フッター
+  reserved: 'Reserved 2023'
+
+  selectEnglish: 'English (英語)'
+  
+  selectJapanese: 'Japanese (日本語)'
+
+  adminMode: 'Logged in as Admin!'

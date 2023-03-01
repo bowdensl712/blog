@@ -11,12 +11,15 @@ body {
 }
 
 h1 {
-    font-size: 6vh;
+    font-size: 45px;
     color: #DFD5A5;
     text-shadow: 1.5px 1.5px #344B58;
     margin: 0 0 10px 0;
-    padding: 13px 0;
     background-color: #628395;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h2 {
@@ -39,6 +42,7 @@ a:hover {
 
 img {
     border: 1.5px solid #5B5349;
+    max-height: 200px;
 }
 
 #article_image {
@@ -98,6 +102,7 @@ select {
     position: relative;
     width: 250px;
     height: auto;
+    max-height: 200px;
 }
 
 .article_thumbnail:hover {
@@ -127,6 +132,25 @@ select {
     color: #423C35;
     border-color: #423C35; 
 }
+
+.entry_count {
+  margin: 15px;
+}
+
+/* 並び替えボックス */
+#sort_box {
+  border: 1px solid #5B5349;
+  width: 200px;
+  height: 30px;
+  margin: 10px auto -40px 350px;
+  padding: 0px 0px 5px 0px;
+}
+
+#sort_label {
+  display: inline-block;
+  margin: 7px auto;
+}
+
 
 /* 検索ボックス */
 #search_box {
@@ -160,6 +184,42 @@ select {
     
 }
 
+.date_box {
+  display: inline-block;
+  margin: 4px;
+}
+
+/* Deviseメニュー */
+
+.devise_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 370px;
+  height: 80px;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  background-color: #516C7B;
+  color: #DFD5A5;
+  font-size: 17px;
+  text-shadow:0px 0px 0.6px #DFD5A5;
+}
+
+.button_container {
+  margin-left: auto;
+  height: auto;
+  width: 120px;
+}
+
+/* Devise Views */
+.remember_me {
+display: inline;
+width: 100px;
+margin-left: 130px;
+}
+
 /* フッター */
 
 footer {
@@ -179,5 +239,28 @@ footer {
 
 #footer_link:hover {
     color: #423C35;
-    text-shadow:0px 0px 1px #423C35;
+    text-shadow:0px 0px 0.6px #423C35;
+}
+
+.footer_divider {
+  display: inline-block;
+  margin: -7px 5px;
+  width: 1.5px;
+  height: 27px;
+  background-color: #5B5349;
+}
+
+.admin_mode {
+  display: inline;
+  font-weight: bold;
+}
+
+/* Alert、Message表示 */
+.alert {
+  position: absolute;
+  top: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
